@@ -12,7 +12,7 @@ public class ExameModel implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID cd_exame;
-	@Column(nullable = false, unique = true, length = 10)
+	@Column(nullable = false, unique = true, length = 25)
 	private String nome;
 	@Column(nullable = false, length = 250)
 	private String descricao;

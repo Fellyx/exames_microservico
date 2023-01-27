@@ -1,7 +1,14 @@
 package com.example.exames_microservico.services;
 
+import java.awt.print.Pageable;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
 import javax.transaction.Transactional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.exames_microservico.models.ExameModel;
@@ -9,6 +16,7 @@ import com.example.exames_microservico.repositories.ExameRepository;
 
 @Service
 public class ExameService {
+
   final ExameRepository exameRepository;
   
   public ExameService(ExameRepository exameRepository) {
@@ -28,8 +36,8 @@ public class ExameService {
       return exameRepository.findAll(pageable);
   }
 
-  public Optional<ExameModel> findById(UUID id) {
-      return exameRepository.findById(id);
+  public Optional<ExameModel> findBycd_exame(UUID cd_exame) {
+      return exameRepository.findById(cd_exame);
   }
 
   @Transactional
