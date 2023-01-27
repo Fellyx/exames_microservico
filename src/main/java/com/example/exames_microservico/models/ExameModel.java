@@ -14,7 +14,7 @@ public class ExameModel implements Serializable {
 	private UUID cd_exame;
 	@Column(nullable = false, unique = true, length = 10)
 	private String nome;
-	@Column(nullable = false, unique = true, length = 250)
+	@Column(nullable = false, length = 250)
 	private String descricao;
 	
 	
